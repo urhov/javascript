@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="background.css">
+    <link rel="stylesheet" href="IMG/hieno.jpg"
     <title>Hedelmapeli</title>
-    <p>Hedelmapeli</p>
+    <p>PANOS</p>
+
 </head>
 <div class="container">
 <form name= "my-form" class="my-form" onsubmit="peli(event)"> 
@@ -17,16 +20,15 @@
 
 
 <body>
-    <img src="hieno.jpg" alt="hieno jpg"> 
-    <img src="images.jpg" alt="images jpg">
-    <img src= "cherries-clipart-summer-11.png" alt="cherries-clipart-summer-11 png">
-    <img src= "lataus.jpg" alt="lataus jpg">
-    <img src="paaryna.jpg" alt="paaryna jpg">
+    <img src="IMG/hienov2.jpg" alt="hienov2 jpg" class="slot-img"> 
+    <img src="IMG/omena.jpg" alt="omena jpg" class="slot-img">
+    <img src= "IMG/cherries-clipart-summer-11.png" alt="cherries-clipart-summer-11 png" class="slot-img">
+    <img src= "IMG/melooni.jpg" alt= "melooni jpg" class="slot-img">
 </body>
 <script>
-    function startGame(){
-
-    }
+    function startGame() {
+    myGamePiece = new component (30, 30, "darksalmon", 10, 160);
+    myScore = new component ("40px", "consolas", "black", "black", 280, 40, "text")
 {
     function updateGameArea (){
         myGameArea.clear();
@@ -35,11 +37,18 @@
     }
 }
 {
-    function Pelaa() {
+    function play() {
         myGamePiece.speedY -= 1;
     }
 }
 
+var myGamePiece;
+
+var myObstacles = [];
+ 
+var myScore;
+
 
 </script>
+<button onclick="moveto()">Pelaa</button>
 </html>
