@@ -1,0 +1,28 @@
+p {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+style {
+    background-color:red
+}
+
+div.ex1 {
+    width: 100px
+}
+
+div.ex2 {
+    max-width: 150px
+}
+
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: right; 
+}
+ 
+
+

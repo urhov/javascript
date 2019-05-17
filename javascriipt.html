@@ -1,54 +1,124 @@
-<!DOCTYPE html>
-<html lang="fin">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="background.css">
-    <link rel="stylesheet" href="IMG/hieno.jpg"
-    <title>Hedelmapeli</title>
-    <p>PANOS</p>
+<html>
+    <!DOCTYPE html>
+    <html lang="fin">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link rel="stylesheet" href="hedelma.css">
+            <link rel="stylesheet" href="IMG/hieno.jpg">
+            <link rel="stylesheet" href="js.js">
+        <style>
+            p{
+                background-color: rgb(red, green, blue);
+            }
+        
+        div.a{
+            text-align: center;
+        }
+    
+        div.b  {
+            text-align: center; 
+        }
+        </style>
+           
+        <title>hedelmäpeli</title>
+        <h1>hedelmäpeli</h1>
+        <div class="a">
+            <p>Rahat: <span id= "rahat">75€</span></p>
+            
+         </div> 
+            <div class ="b">
+            <p>Panos: <span id= "rahat">1€</span></p>
+         
+        </div>
+      
+    </head>
+    <form name= "my-form" class="my-form" onsubmit="peli(event)">
+        
+        
+    </style>
 
-</head>
-<div class="container">
-<form name= "my-form" class="my-form" onsubmit="peli(event)"> 
+    
+    
+    
+    <body>
+    
+        <img src="IMG/hienov2.png" alt="hienov2 png" style="width: 150px;height: 100px"> 
+        <img src="IMG/images.png" alt="images png" style="width: 150px;height:100px">
+        <img src="IMG/kirsikka.png" alt="kirsikka png" style="width: 150px;height: 100px">
+        <img src="IMG/melooni.png" alt= "melooni png" style="width: 150px;height: 100px">
+        <center>
+             <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
+             <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
+             <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
+             <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
+        </center>
+     
+        
+            
+  
+
+    <div class="form-group">
+            <label><input type="checkbox" name="lock1"></label> 
+
+            <label><input type="checkbox" name="lock2"></label>
+
+            <label><input type="checkbox" name="lock3"></label>
+
+            <label><input type="checkbox" name="lock4"></label>
+            
+         </div>
+         <button= onclick ="moveto()">Pelaa</button> 
+        </body>
+<script>   
+
+    
+    var panos=1;
+    var panos=2;
+    var panos=3; 
+    var Rahat=75; 
+    var myScore=50; 
+    
+
+    var lock1 
+    var lock2 
+    var lock3 
+    var lock4
 
 
 
-</div>
 
 
-
-<body>
-    <img src="IMG/hienov2.jpg" alt="hienov2 jpg" class="slot-img"> 
-    <img src="IMG/omena.jpg" alt="omena jpg" class="slot-img">
-    <img src= "IMG/cherries-clipart-summer-11.png" alt="cherries-clipart-summer-11 png" class="slot-img">
-    <img src= "IMG/melooni.jpg" alt= "melooni jpg" class="slot-img">
-</body>
-<script>
-    function startGame() {
-    myGamePiece = new component (30, 30, "darksalmon", 10, 160);
-    myScore = new component ("40px", "consolas", "black", "black", 280, 40, "text")
-{
-    function updateGameArea (){
-        myGameArea.clear();
-        myGameArea.newPos();
-        myGameArea.update();
-    }
-}
-{
-    function play() {
-        myGamePiece.speedY -= 1;
-    }
-}
-
-var myGamePiece;
-
-var myObstacles = [];
- 
-var myScore;
-
-
+    const Game = function() {
+        game.update ();
+      
+        if (rahat < 0) {
+            document.getElementById ('id_error').innerHTML = "rahat on loppu";
+        } 
+        else {
+            document.getElementById('id_error').innerHTML = "";
+        }
+    
+        if  (panos == 1) {
+            rahat = rahat + 2 
+        }
+        else {
+            (panos == 1)
+            rahat = rahat 
+        }
+    } 
+  
 </script>
-<button onclick="moveto()">Pelaa</button>
+        
+  
+    
+    
+    
+    </div>
+
+    
+
+
+
 </html>
