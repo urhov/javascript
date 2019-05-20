@@ -1,5 +1,5 @@
 p {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'arial Verdana', Courier, monospace;
 }
 
 
@@ -23,6 +23,11 @@ h1 {
 h2 {
     text-align: right; 
 }
- 
+ IMG {
+     margin: auto; 
+     width: 50%;  
+    border:  6px black;
+    padding: 10px; 
+ }
 
 

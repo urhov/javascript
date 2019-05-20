@@ -10,7 +10,7 @@
             <link rel="stylesheet" href="js.js">
         <style>
             p{
-                background-color: rgb(red, green, blue);
+                background-color: wheat
             }
         
         div.a{
@@ -41,34 +41,27 @@
 
     
     
-    
-    <body>
-    
-        <img src="IMG/hienov2.png" alt="hienov2 png" style="width: 150px;height: 100px"> 
-        <img src="IMG/images.png" alt="images png" style="width: 150px;height:100px">
-        <img src="IMG/kirsikka.png" alt="kirsikka png" style="width: 150px;height: 100px">
-        <img src="IMG/melooni.png" alt= "melooni png" style="width: 150px;height: 100px">
-        <center>
-             <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
-             <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
-             <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
-             <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
-        </center>
+    <div class="IMGcontainer"
+
      
-        
-            
+       
+    <body>
+                
+            <img src="IMG/hienov2.png" alt="hienov2 png" style="width: 150px;height:100px"> 
+            <img src="IMG/images.png" alt="images png" style="width: 150px;height:100px">
+            <img src="IMG/kirsikka.png" alt="kirsikka png" style="width: 150px;height: 100px">
+            <img src="IMG/melooni.png" alt= "melooni png" style="width: 150px;height: 100px">
+            <center>
+                 <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
+                 <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
+                 <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
+                 <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
+            </center>
+     </body>
+    </div>
+
   
 
-    <div class="form-group">
-            <label><input type="checkbox" name="lock1"></label> 
-
-            <label><input type="checkbox" name="lock2"></label>
-
-            <label><input type="checkbox" name="lock3"></label>
-
-            <label><input type="checkbox" name="lock4"></label>
-            
-         </div>
          <button= onclick ="moveto()">Pelaa</button> 
         </body>
 <script>   
@@ -86,7 +79,7 @@
     var lock3 
     var lock4
 
-
+    
 
 
 
@@ -108,7 +101,33 @@
             rahat = rahat 
         }
     } 
+  if (lock2 == true  || lock2 == true || lock3 == true  || lock4 == true){  
+  }
+  if (lock==false){
+    document.getElementById ("lock1").src = "IMG/lockv2.png" ;
+  document.getElementById("lock1").disabled = false;
+
+  document.getElementById ("lock2").src = "IMG/lockv2.png" ;
+  document.getElementById("lock2").disabled = false;
+
+  document.getElementById ("lock3").src = "IMG/lockv2.png" ;
+  document.getElementById("lock3").disabled = false;
+
+  document.getElementById ("lock4").src = "IMG/lockv2.png" ;
+  document.getElementById("lock4").disabled = false;
+  }
   
+  else {document.getElementById ("lock1").src = "IMG/lockv2.png" ;
+  document.getElementById("lock1").disabled = true;
+
+  document.getElementById ("lock2").src = "IMG/lockv2.png" ;
+  document.getElementById("lock2").disabled = true;
+
+  document.getElementById ("lock3").src = "IMG/lockv2.png" ;
+  document.getElementById("lock3").disabled = true;
+
+  document.getElementById ("lock4").src = "IMG/lockv2.png" ;
+  document.getElementById("lock4").disabled = true;}
 </script>
         
   
