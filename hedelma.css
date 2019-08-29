@@ -1,33 +1,54 @@
-p {
+body, html {
     font-family: 'arial Verdana', Courier, monospace;
+    
+    background-image: url("IMG/hedelmätausta.jpg");  
+    
+
+
+    /* Height*/
+    height: 100%;
+
+    /*karkaus esto*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+
+    
 }
 
 
-style {
-    background-color:red
+ 
+
+.info { 
+    margin: auto;   
+    width: 50%;  
+    border: 6px black;
+    padding: 10px; 
 }
 
-div.ex1 {
-    width: 100px
+.wheat {
+    background-color: khaki;
 }
 
-div.ex2 {
-    max-width: 150px
-}
-
-
-h1 {
+.center {
     text-align: center;
 }
 
-h2 {
-    text-align: right; 
+.slots {
+    background-color: aliceblue;
+    width: 80%;
+    margin: 10px auto;
+    border: 6px black;
+    padding: 10px;
+    
+
 }
- IMG {
-     margin: auto; 
-     width: 50%;  
-    border:  6px black;
-    padding: 10px; 
- }
+.painike {
+    border: green;
+    width: 50%
+    
+}
 
 

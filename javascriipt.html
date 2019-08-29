@@ -1,143 +1,53 @@
-<html>
-    <!DOCTYPE html>
-    <html lang="fin">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <link rel="stylesheet" href="hedelma.css">
-            <link rel="stylesheet" href="IMG/hieno.jpg">
-            <link rel="stylesheet" href="js.js">
-        <style>
-            p{
-                background-color: wheat
-            }
-        
-        div.a{
-            text-align: center;
-        }
+<!DOCTYPE html>
+<html lang="fin">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="hedelma.css">
+
+    <title>hedelmäpeli</title>  
+</head>
+<body>
+    <h1 class="center">hedelmäpeli</h1>
     
-        div.b  {
-            text-align: center; 
-        }
-        </style>
-           
-        <title>hedelmäpeli</title>
-        <h1>hedelmäpeli</h1>
-        <div class="a">
-            <p>Rahat: <span id= "rahat">75€</span></p>
-            
-         </div> 
-            <div class ="b">
-            <p>Panos: <span id= "rahat">1€</span></p>
-         
+    <div class="center wheat info">
+        <p>Rahat: <span id="rahat">75€</span></p>
+    </div> 
+    <div class ="center wheat info">
+        <p>Panos: <span id="rahat"></span></p>
+
+        <div class="slots">
+            <span class="IMGcontainer1">
+                <img src="IMG/hienov2.png" alt="hienov2 png" style="width: 150px; height:100px; left: 500px"> 
+            </span>
+            <span class="IMGcontainer2">
+                <img src="IMG/kirsikka.png" alt="kirsikka png" style="width: 150px; height: 100px;">
+            </span>
+            <span class="IMGcontainer3">
+                <img src="IMG/melooni.png" alt= "melooni png" style="width: 150px; height: 100px;">
+            </span>
         </div>
-      
-    </head>
-    <form name= "my-form" class="my-form" onsubmit="peli(event)">
-        
-        
-    </style>
-
     
-    
-    <div class="IMGcontainer"
+        <div class="bg"></div>
+ 
+        <div class="locks">
+            <span class="lukko1">
+                <img id="btn-lock1" data-lock="false" onclick="lukitse(this)" src="IMG/lock.png" width="150px">
+            </span>
+                   
+            <span class="lukko2">
+                    <img id="btn-lock2" data-lock="false" onclick="lukitse(this)" src="IMG/lock.png" width="150px">                                                                            
+            </span>
 
-     
+            <span class="lukko3">
+                    <img id="btn-lock3" data-lock="false" onclick="lukitse(this)" src="IMG/lock.png" width="150px">
+
+            </span>
+        </div>
+    </div>
+            
+    <script src="js.js"></script>    
        
-    <body>
-                
-            <img src="IMG/hienov2.png" alt="hienov2 png" style="width: 150px;height:100px"> 
-            <img src="IMG/images.png" alt="images png" style="width: 150px;height:100px">
-            <img src="IMG/kirsikka.png" alt="kirsikka png" style="width: 150px;height: 100px">
-            <img src="IMG/melooni.png" alt= "melooni png" style="width: 150px;height: 100px">
-            <center>
-                 <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
-                 <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
-                 <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
-                 <img src="IMG/lock.png" alt="lock png" style="width:150px;height:100px; left: 400px">
-            </center>
-     </body>
-    </div>
-
-  
-
-         <button= onclick ="moveto()">Pelaa</button> 
-        </body>
-<script>   
-
-    
-    var panos=1;
-    var panos=2;
-    var panos=3; 
-    var Rahat=75; 
-    var myScore=50; 
-    
-
-    var lock1 
-    var lock2 
-    var lock3 
-    var lock4
-
-    
-
-
-
-    const Game = function() {
-        game.update ();
-      
-        if (rahat < 0) {
-            document.getElementById ('id_error').innerHTML = "rahat on loppu";
-        } 
-        else {
-            document.getElementById('id_error').innerHTML = "";
-        }
-    
-        if  (panos == 1) {
-            rahat = rahat + 2 
-        }
-        else {
-            (panos == 1)
-            rahat = rahat 
-        }
-    } 
-  if (lock2 == true  || lock2 == true || lock3 == true  || lock4 == true){  
-  }
-  if (lock==false){
-    document.getElementById ("lock1").src = "IMG/lockv2.png" ;
-  document.getElementById("lock1").disabled = false;
-
-  document.getElementById ("lock2").src = "IMG/lockv2.png" ;
-  document.getElementById("lock2").disabled = false;
-
-  document.getElementById ("lock3").src = "IMG/lockv2.png" ;
-  document.getElementById("lock3").disabled = false;
-
-  document.getElementById ("lock4").src = "IMG/lockv2.png" ;
-  document.getElementById("lock4").disabled = false;
-  }
-  
-  else {document.getElementById ("lock1").src = "IMG/lockv2.png" ;
-  document.getElementById("lock1").disabled = true;
-
-  document.getElementById ("lock2").src = "IMG/lockv2.png" ;
-  document.getElementById("lock2").disabled = true;
-
-  document.getElementById ("lock3").src = "IMG/lockv2.png" ;
-  document.getElementById("lock3").disabled = true;
-
-  document.getElementById ("lock4").src = "IMG/lockv2.png" ;
-  document.getElementById("lock4").disabled = true;}
-</script>
-        
-  
-    
-    
-    
-    </div>
-
-    
-
-
-
+    </body> 
 </html>
