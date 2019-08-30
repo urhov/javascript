@@ -2,7 +2,7 @@ body, html {
     font-family: 'arial Verdana', Courier, monospace;
     
     background-image: url("IMG/hedelmätausta.jpg");  
-    
+
 
 
     /* Height*/
@@ -12,15 +12,8 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-
-
-    
 }
-
-
- 
-
+/*overlay*/
 .info { 
     margin: auto;   
     width: 50%;  
@@ -33,22 +26,49 @@ body, html {
 }
 
 .center {
+    width:50% ;
     text-align: center;
+    margin: 10px auto; 
+    border: 6px black;
+    padding: 10px;
+    background-color: khaki;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+   
 }
 
 .slots {
-    background-color: aliceblue;
+    background-color: khaki;
     width: 80%;
     margin: 10px auto;
     border: 6px black;
     padding: 10px;
     
 
-}
-.painike {
-    border: green;
-    width: 50%
     
+
+}
+/*Pelaa napin tuunaus*/
+.btn {
+    padding: 15px 25px; 
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: black;
+    color:  white;
+    background-color: crimson;
+    border: 6px;
+    border-radius: 16px;
+    box-shadow: 0 9px #999;
+   
+
 }
 
+.btn:hover {background-color: darkblue}
+
+.btn:active {
+    background-color: darkblue;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
 
