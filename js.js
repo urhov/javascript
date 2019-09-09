@@ -1,5 +1,117 @@
+let images = [ "paaryna.png", "kirsikka.png", "melooni.png"];
+
+
+
+
+// Panos
+let panos = 1; 
+function asetaPanos(n) {
+    panos = n;
+    update();   
+}
+
+function update (){
+    document.getElementById("spanPanos").innerHTML = panos;
+}
+//häviö rahan menetys
+let rahat = 1;
+    function pelaaPainike (){
+        rahat = k;
+if (panos = 1){
+document.getElementById("rahat").innerHTML = rahat = 74; 
+if (panos =2){
+    document.getElementById("rahat").innerHTML = rahat = 73;
+}
+}   
+    }
+    
+     
+        
+   
+// Pelaa napin toiminta
+
+let slot1;
+let slot2; 
+let slot3;
+
+function pelaaPainike () {
+    
+    // Tutki ennen slot()-funktion kutsua onko slotti lukittu ja arvo vasta sitten kuva
+
+
+    if (lock1 == 0) {
+        slot1 = slot();
+    }
+        
+    
+    if (lock2 == 0) {
+        slot2 = slot();
+    }
+        
+       if (lock3 == 0) {
+        slot3 = slot(); 
+       }
+
+    
+        document.getElementById("k1").src = "./IMG/" + images[slot1];
+        document.getElementById("k2").src = "./IMG/" + images[slot2];
+        document.getElementById("k3").src = "./IMG/" + images[slot3];
+        function slot(){
+            return Math.floor(Math.random()* images.length);
+        }
+        function slot(){
+            return Math.floor(Math.random()* images.length);
+        }
+        } 
+    
+   
+   
+
+/************************************ *
+Lukituksen toiminta
+***************************************/
+
+let lock1 = lock2 = lock3 = 0; 
+
+function lukitse(j) {
+    
+
+    if (j.id == "lock1") {
+        if (lock1 == 0) {
+            lock1 = 1;
+        } else {
+            lock1 = 0;
+        }
+        console.log(lock1);
+        vaihdaKuva(j);
+    }
+
+    if (j.id == "lock2") {
+        console.log(j.id)
+        if (lock2 == 0) {
+            lock2 = 1;
+        } else {
+            lock2 = 0;
+        }
+        console.log(lock2);
+        vaihdaKuva(j);
+    }
+
+    if (j.id == "lock3") {
+        console.log(j.id)
+        if (lock3 == 0) {
+            lock3 = 1;
+        } else {
+            lock3 = 0;
+        }
+        console.log(lock3);
+        vaihdaKuva(j);
+    }
+
+}
+
 // Lukituspainikkeen kuvan vaihto
-function lukitse(elem) {
+function vaihdaKuva(elem) {
     console.log(elem);
     if (elem.dataset.lock == 'false')   { 
         document.getElementById(elem.id).src = "./IMG/lockv3.png";
@@ -10,22 +122,3 @@ function lukitse(elem) {
         elem.dataset.lock = "false"; 
     }
 }
-// Panos 
-function panos(elem) {
-    console.log(elem.id);
-    if (elem.dataset.change == 'false') {
-        document.getElementById(elem.id)= Panos == 2 
-        elem.dataset.change = "true"; 
-
-}
-else {
-    document.getElementById(elem.id)= Panos == 1
-    elme.dataset.change = "false";
-}
-
-}
-
-
-
-
-// Pelaa napin toiminta

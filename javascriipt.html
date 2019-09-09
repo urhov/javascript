@@ -8,51 +8,51 @@
 
     <title>hedelmäpeli</title>  
 </head>
-<body>
+<body onload = "update()">
     <p class="center">hedelmäpeli</p>   
     <div class ="center wheat info">
         <p>Rahat: <span id="rahat">75€</span></p>  
         <div class="slots">
             <span class="IMGcontainer1">
-                <img src="IMG/hienov2.png" alt="hienov2 png"  style="width: 150px; height:100px; left: 500px"> 
+                <img src="IMG/paaryna.png" id="k1" alt="paaryna png"  style="width: 150px; height:100px; left : 500px">
             </span>
             <span class="IMGcontainer2">
-                <img src="IMG/kirsikka.png" alt="kirsikka png"  style="width: 150px; height: 100px;">
+                <img src="IMG/kirsikka.png" id="k2" alt="kirsikka png"  style="width: 150px; height: 100px;">
             </span>
             <span class="IMGcontainer3">
-                <img src="IMG/melooni.png" alt= "melooni png"  style="width: 150px; height: 100px;">
+                <img src="IMG/melooni.png" id="k3" alt= "melooni png"  style="width: 150px; height: 100px;">
             </span>
         </div>
         <div class="locks">
             <span class="lukko1">
-                 <img id="btn-lock1" data-lock="false" onclick="lukitse(this)" src="IMG/lock.png" width="150px">
+                 <img id="lock1" data-lock="false" onclick="lukitse(this)" src="IMG/lock.png" width="150px">
             </span>
                    
             <span class="lukko2">
-                 <img id="btn-lock2" data-lock="false" onclick="lukitse(this)" src="IMG/lock.png" width="150px">                                                                            
+                 <img id="lock2" data-lock="false" onclick="lukitse(this)" src="IMG/lock.png" width="150px">                                                                            
             </span>
 
             <span class="lukko3">
-                  <img id="btn-lock3" data-lock="false" onclick="lukitse(this)" src="IMG/lock.png" width="150px">
+                  <img id="lock3" data-lock="false" onclick="lukitse(this)" src="IMG/lock.png" width="150px">
                   </span>
                 </div>
                     
-            <button class="btn">pelaa</button>
+            <button onclick = "pelaaPainike()" class="btn">pelaa</button>
                     
             
 
-<p>Panos:<span id="rahat"></span></p>  
+<p>Panos:<span id="spanPanos"></span></p>  
 <div class="Panos">
     <span class="Panos1">
-    <img  id="btn-euro1" data-change="false" onclick= "panos(this)" src="IMG/1euro.png" alt= "1euro png" style="width: 150px; height: 100px">
+    <img id="btn-euro1" onclick="asetaPanos(1)" src="IMG/1euro.png" alt= "1euro png" style="width: 150px; height: 100px">
     </span>
     <span class="Panos2">
-    <img id="btn-euro1" data-change="false" onclick= "panos(this)" src="IMG/2euro.png" alt= "2euro png" style="width: 150px; height: 100px">
+    <img id="btn-euro2" onclick="asetaPanos(2)" src="IMG/2euro.png" alt= "2euro png" style="width: 150px; height: 100px">
     </span>
 
 </div>
             </span>
-           
+            
     </div>
             
     <script src="js.js"></script>    
