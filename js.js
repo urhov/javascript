@@ -1,5 +1,5 @@
 let images = [ "paaryna.png", "kirsikka.png", "melooni.png"];
-
+let rahat = 50;
 
 
 
@@ -12,32 +12,32 @@ function asetaPanos(n) {
 
 function update (){
     document.getElementById("spanPanos").innerHTML = panos;
+    document.getElementById("rahat").innerHTML = rahat;
+
 }
-//häviö rahan menetys
-let rahat = 1;
-    function pelaaPainike (){
-        rahat = k;
-if (panos = 1){
-document.getElementById("rahat").innerHTML = rahat = 74; 
-if (panos =2){
-    document.getElementById("rahat").innerHTML = rahat = 73;
-}
-}   
-    }
-    
-     
-        
    
+
 // Pelaa napin toiminta
 
 let slot1;
 let slot2; 
 let slot3;
 
+
+function slot(){
+    return Math.floor(Math.random()* images.length);
+}
+function slot(){
+    return Math.floor(Math.random()* images.length);
+}
+
+
 function pelaaPainike () {
     
+    rahat = rahat - panos;
+    
+    
     // Tutki ennen slot()-funktion kutsua onko slotti lukittu ja arvo vasta sitten kuva
-
 
     if (lock1 == 0) {
         slot1 = slot();
@@ -48,21 +48,18 @@ function pelaaPainike () {
         slot2 = slot();
     }
         
-       if (lock3 == 0) {
+    if (lock3 == 0) {
         slot3 = slot(); 
-       }
+    }
 
+
+    document.getElementById("k1").src = "./IMG/" + images[slot1];
+    document.getElementById("k2").src = "./IMG/" + images[slot2];
+    document.getElementById("k3").src = "./IMG/" + images[slot3];
     
-        document.getElementById("k1").src = "./IMG/" + images[slot1];
-        document.getElementById("k2").src = "./IMG/" + images[slot2];
-        document.getElementById("k3").src = "./IMG/" + images[slot3];
-        function slot(){
-            return Math.floor(Math.random()* images.length);
-        }
-        function slot(){
-            return Math.floor(Math.random()* images.length);
-        }
-        } 
+    update();
+
+} 
     
    
    
@@ -122,3 +119,15 @@ function vaihdaKuva(elem) {
         elem.dataset.lock = "false"; 
     }
 }
+
+   //voiton tarkistus
+   
+   function tarkistaVoitto(){
+       if (slot1 + slot2 + slot3) {
+
+
+       }
+   }
+   
+
+
