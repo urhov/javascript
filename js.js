@@ -57,6 +57,8 @@ function pelaaPainike () {
     document.getElementById("k2").src = "./IMG/" + images[slot2];
     document.getElementById("k3").src = "./IMG/" + images[slot3];
     
+    tarkistaVoitto();
+
     update();
 
 } 
@@ -123,11 +125,14 @@ function vaihdaKuva(elem) {
    //voiton tarkistus
    
    function tarkistaVoitto(){
-       if (slot1 + slot2 + slot3) {
+       
+        if (slot1 == 1 && slot2 == 1 && slot3 == 1) {
+            alert("olet voittanut!");
+        }
+        
 
-
-       }
-   }
+    }
+   
    
 
 
