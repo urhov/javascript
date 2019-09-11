@@ -1,6 +1,6 @@
 let images = [ "paaryna.png", "kirsikka.png", "melooni.png"];
 let rahat = 50;
-
+const msg = document.querySelector ('.msg');
 
 
 // Panos
@@ -124,14 +124,27 @@ function vaihdaKuva(elem) {
 
    //voiton tarkistus
    
-   function tarkistaVoitto(){
+function tarkistaVoitto(){
        
-        if (slot1 == 1 && slot2 == 1 && slot3 == 1) {
+        if (slot1 == 0 && slot2 == 0 && slot3 == 0) {
             alert("olet voittanut!");
+            rahat = rahat + 2;
+        }
+        else if (slot1 == 1 && slot2 == 1 && slot3 == 1) {
+            alert("olet voittanut!"); 
+            rahat = rahat + 5;
+        }
+        else if (slot1 == 2 && slot3 == 2 && slot3 == 2) {
+                alert("olet voittanut!");
+               rahat = rahat + 10;
+            }
+        else {
+            (slot1 == slot1 && slot2 == slot2 && slot3 == slot3);
         }
         
+        update();
 
-    }
+}
    
    
 
