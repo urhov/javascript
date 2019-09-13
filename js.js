@@ -11,6 +11,11 @@ function asetaPanos(n) {
 }
 
 function update (){
+
+    document.getElementById("k1").src = "./IMG/" + images[slot1];
+    document.getElementById("k2").src = "./IMG/" + images[slot2];
+    document.getElementById("k3").src = "./IMG/" + images[slot3];
+
     document.getElementById("spanPanos").innerHTML = panos;
     document.getElementById("rahat").innerHTML = rahat;
 
@@ -19,9 +24,9 @@ function update (){
 
 // Pelaa napin toiminta
 
-let slot1;
-let slot2; 
-let slot3;
+let slot1 = 0;
+let slot2 = 1; 
+let slot3 = 2;
 
 
 function slot(){
@@ -53,13 +58,11 @@ function pelaaPainike () {
     }
 
 
-    document.getElementById("k1").src = "./IMG/" + images[slot1];
-    document.getElementById("k2").src = "./IMG/" + images[slot2];
-    document.getElementById("k3").src = "./IMG/" + images[slot3];
+    update();
     
     tarkistaVoitto();
 
-    update();
+  
 
 } 
     
@@ -126,25 +129,32 @@ function vaihdaKuva(elem) {
    
 function tarkistaVoitto(){
        
-        if (slot1 == 0 && slot2 == 0 && slot3 == 0) {
-            alert("olet voittanut!");
+        if (slot1 == 0 && slot2 == 0 && slot3 == 0) {    
             rahat = rahat + 2;
+            update();
+            alert("VOITIT 2!");
         }
         else if (slot1 == 1 && slot2 == 1 && slot3 == 1) {
-            alert("olet voittanut!"); 
             rahat = rahat + 5;
+            update();
+            alert("VOITIT 5!");
+           
         }
         else if (slot1 == 2 && slot3 == 2 && slot3 == 2) {
-                alert("olet voittanut!");
-               rahat = rahat + 10;
+            rahat = rahat + 10;
+            update();
+            alert("VOITIT 10!");
+               
             }
         else {
             (slot1 == slot1 && slot2 == slot2 && slot3 == slot3);
         }
         
-        update();
+        
 
 }
+
+// setTimeout(() => remove(), 3000); 
    
    
 

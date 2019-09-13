@@ -18,7 +18,7 @@ body, html {
 .info { 
     margin: auto;   
     width: 50%;  
-    border: 6px black;
+    border: 2px black;
     padding: 10px;
     
     
@@ -32,13 +32,13 @@ body, html {
     width:50% ;
     text-align: center;
     margin: 10px auto; 
-    border: 6px solid black;
+    border: 3px solid black;
     padding: 10px;
-    background-image: url(  );
+    background-image: url();
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
-    background-color: khaki;
-    
+    background-color:  khaki;
+    opacity: 1.0;
    
 }
 
@@ -46,7 +46,7 @@ body, html {
     background-image: url();
     width: 80%;
     margin: 10px auto;
-    border: 6px black;
+    border: 2px black;
     padding: 10px;
     border: 6px solid black;
 }
@@ -80,11 +80,11 @@ body, html {
 .Taulukko {
     position: absolute;
     height: 360px;
-    width: 50%;
+    width: 22%;
     font-size: 75%;
-    left: 25%;
-    top:72%;
-    border: 8px;
+    left: 76%;
+    top:29%;
+    border: 2px solid black;
     border-color: black;
     background-color: khaki;
 }
