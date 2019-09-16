@@ -1,6 +1,38 @@
+
+// modaali 
+var modaali = document.getElementById("myModal"); 
+
+// modaalin avaaja nappi
+var Btn = document.getElementById("myBtn");
+
+//span, joka sulkee modalin 
+
+var span = document.getElementsByClassName("close")[0];
+
+// kun käyttäjä painaa nappia 
+
+// Btn.onclick = function() {
+function showModal(){
+    modaali.style.display = "block";
+}
+
+//kun painettaan  (X) sulkee modaalin
+span.onclick = function() {
+modaali.style.display = "none";
+}
+
+
+// kun käyttäjä painaa jonnekkin ulos modalista, sulje
+
+window.onclick = function(event){
+    if (event.target == modaali) {
+        modaali.style.display = "none";
+    }
+}
+
 let images = [ "paaryna.png", "kirsikka.png", "melooni.png"];
 let rahat = 50;
-const msg = document.querySelector ('.msg');
+
 
 
 // Panos
@@ -8,7 +40,7 @@ let panos = 1;
 function asetaPanos(n) {
     panos = n;
     update();   
-}
+}   
 
 function update (){
 
@@ -132,29 +164,43 @@ function tarkistaVoitto(){
         if (slot1 == 0 && slot2 == 0 && slot3 == 0) {    
             rahat = rahat + 2;
             update();
-            alert("VOITIT 2!");
+            showModal();
         }
         else if (slot1 == 1 && slot2 == 1 && slot3 == 1) {
             rahat = rahat + 5;
             update();
-            alert("VOITIT 5!");
+           showModal();
            
         }
         else if (slot1 == 2 && slot3 == 2 && slot3 == 2) {
             rahat = rahat + 10;
             update();
-            alert("VOITIT 10!");
-               
+            showModal();
             }
         else {
-            (slot1 == slot1 && slot2 == slot2 && slot3 == slot3);
+           update();
         }
         
         
 
 }
-
 // setTimeout(() => remove(), 3000); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
    
    
 
