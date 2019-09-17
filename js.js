@@ -1,42 +1,52 @@
+let lukitus = false;
 
-// modaali 
-var modaali = document.getElementById("myModal"); 
+let lock1 = lock2 = lock3 = 0; 
 
-// modaalin avaaja nappi
-var Btn = document.getElementById("myBtn");
+let images = [ "paaryna.png", "kirsikka.png", "melooni.png"];
+let rahat = 50;
+let panos = 1; 
+
+
+let slot1 = 0;
+let slot2 = 1; 
+let slot3 = 2;
+
 
 //span, joka sulkee modalin 
-
 var span = document.getElementsByClassName("close")[0];
 
 // kun käyttäjä painaa nappia 
-
-// Btn.onclick = function() {
-function showModal(){
+function showModal(elemId){
+    let modaali = document.getElementById(elemId);
     modaali.style.display = "block";
 }
 
 //kun painettaan  (X) sulkee modaalin
 span.onclick = function() {
-modaali.style.display = "none";
+    modaali.style.display = "none";
 }
 
 
 // kun käyttäjä painaa jonnekkin ulos modalista, sulje
 
 window.onclick = function(event){
-    if (event.target == modaali) {
+    
+    
+    let modaali = event.target;
+    if (modaali.id == "winModal" || modaali.id == "loseModal") {
         modaali.style.display = "none";
     }
+        
+
+
 }
 
-let images = [ "paaryna.png", "kirsikka.png", "melooni.png"];
-let rahat = 50;
+
 
 
 
 // Panos
-let panos = 1; 
+
 function asetaPanos(n) {
     panos = n;
     update();   
@@ -51,14 +61,13 @@ function update (){
     document.getElementById("spanPanos").innerHTML = panos;
     document.getElementById("rahat").innerHTML = rahat;
 
+    // Lukituksen kuvat
+
+
 }
    
 
 // Pelaa napin toiminta
-
-let slot1 = 0;
-let slot2 = 1; 
-let slot3 = 2;
 
 
 function slot(){
@@ -91,8 +100,21 @@ function pelaaPainike () {
 
 
     update();
-    
+
+    if (lock1 == 1 || lock2 == 1 || lock3 == 1) { 
+        lukitus == false;
+        lock1 = 0;
+        lock2 = 0; 
+        lock3 = 0;
+        update();
+    }
+    else {
+        lukitus = true; 
+    }
+
     tarkistaVoitto();
+
+
 
   
 
@@ -105,10 +127,12 @@ function pelaaPainike () {
 Lukituksen toiminta
 ***************************************/
 
-let lock1 = lock2 = lock3 = 0; 
+
 
 function lukitse(j) {
-    
+    if (lukitus == false){ 
+        return
+    }
 
     if (j.id == "lock1") {
         if (lock1 == 0) {
@@ -146,7 +170,6 @@ function lukitse(j) {
 
 // Lukituspainikkeen kuvan vaihto
 function vaihdaKuva(elem) {
-    console.log(elem);
     if (elem.dataset.lock == 'false')   { 
         document.getElementById(elem.id).src = "./IMG/lockv3.png";
         elem.dataset.lock = "true";
@@ -160,23 +183,33 @@ function vaihdaKuva(elem) {
    //voiton tarkistus
    
 function tarkistaVoitto(){
-       
+    
         if (slot1 == 0 && slot2 == 0 && slot3 == 0) {    
             rahat = rahat + 2;
             update();
-            showModal();
+            showModal('winModal');
+
+        
         }
         else if (slot1 == 1 && slot2 == 1 && slot3 == 1) {
             rahat = rahat + 5;
             update();
-           showModal();
+           showModal('winModal');
+
            
         }
-        else if (slot1 == 2 && slot3 == 2 && slot3 == 2) {
+        else if (slot1 == 2 && slot2 == 2 && slot3 == 2) {
             rahat = rahat + 10;
             update();
-            showModal();
+            showModal('winModal');
+
             }
+
+        else if (rahat <= 0) {
+            update();
+            showModal('loseModal');   
+
+        }
         else {
            update();
         }
@@ -184,24 +217,3 @@ function tarkistaVoitto(){
         
 
 }
-// setTimeout(() => remove(), 3000); 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-   
-
-

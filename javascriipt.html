@@ -9,21 +9,38 @@
     <title>hedelmäpeli</title>  
 </head>
 <body onload="update()">
+    
 
-        <!--Modaalin avaaja --> 
-        
         <!--Modaali-->       
-        <div id="myModal" class="modal">
+        <div id="winModal" class="modal">
             <!--Modaalin asiat-->
             <div class="modal-content">
+            <p>voitto</p>
                 <span class="close">&times;</span>
-                <img src="/IMG/voitit.png" id="v1" alt="voitit png" style="width: 300px; height: 200px;">
-            </div>
+            </div>  
         </div>
+        <!--Häviö Modaali-->       
+        <div id="loseModal" class="modal">
+            <!--Häviö Modaalin asiat-->
+            <div class="modal-content">
+                <p>Hävisit</p>
+                <span class="loseclose">&times;</span>
+            </div>
+        </div> 
+
     <p class="center">hedelmäpeli</p>   
     <div class ="center wheat info">
         <p>Rahat: <span id="rahat"></span>€</p>  
-        <div class="slots">
+        <div class="Panos">
+                <p>Panos:<span id="spanPanos"></span></p> 
+                <span class="Panos1">
+                    <img id="btn-euro1" onclick="asetaPanos(1)" src="IMG/1euro.png" alt= "1euro png" style="width: 75px; height: 70px">
+                </span>
+                <span class="Panos2">
+                    <img id="btn-euro2" onclick="asetaPanos(2)" src="IMG/2euro.png" alt= "2euro png" style="width: 75px; height: 70px">
+                </span>
+            </div>
+        <div class="slots"> 
             <span class="IMGcontainer1">
                 <img src="IMG/paaryna.png" id="k1" alt="paaryna png"  style="width: 150px; height:100px; left : 500px">
             </span>
@@ -66,20 +83,7 @@
                 <p>10€</p>
                 </div>
                 
-            </div>  
-            
-<p>Panos:<span id="spanPanos"></span></p>  
-<div class="Panos">
-    <span class="Panos1">
-    <img id="btn-euro1" onclick="asetaPanos(1)" src="IMG/1euro.png" alt= "1euro png" style="width: 150px; height: 100px">
-    </span>
-    <span class="Panos2">
-    <img id="btn-euro2" onclick="asetaPanos(2)" src="IMG/2euro.png" alt= "2euro png" style="width: 150px; height: 100px">
-    </span>
-
-</div>
-            </span>
-            
+            </div>    
     </div>
             
     <script src="js.js"></script>    

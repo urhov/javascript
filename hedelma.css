@@ -47,10 +47,6 @@ body, html {
     padding: 10px;
     border: 6px solid black;
 }
-
-
-
-
 /*Pelaa napin tuunaus*/
 .btn {  
     padding: 15px 25px; 
@@ -74,18 +70,21 @@ body, html {
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
+
 .Taulukko {
     position: absolute;
     height: 360px;
     width: 22%;
-    font-size: 75%;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 80%;
     left: 76%;
     top:29%;
     border: 2px solid black;
     border-color: black;
     background-color: khaki;
-    font: 24px; 
+   
 }
+
 /*  Modaalin tausta! */
 .modal {
     display: none; 
@@ -106,6 +105,8 @@ body, html {
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /*voii olla pienempi, riippuu ruuudun koosta*/
+    font: 24px; 
+    position: relative;
 
 }
 /*close nappi*/
@@ -124,4 +125,3 @@ body, html {
     text-decoration: none;
     cursor: pointer;
 }
-
