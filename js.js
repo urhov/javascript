@@ -17,11 +17,7 @@ var span = document.getElementsByClassName("close")[0];
 
 // kun käyttäjä painaa nappia 
 function showModal(elemId){
-    let modaali = document.getElementById(elemId);
-    modaali.style.display = "block";
-}
-
-//kun painettaan  (X) sulkee modaalin
+    painettaan  (X) 
 span.onclick = function() {
     modaali.style.display = "none";
 }
@@ -36,15 +32,8 @@ window.onclick = function(event){
     if (modaali.id == "winModal" || modaali.id == "loseModal") {
         modaali.style.display = "none";
     }
-        
-
-
+    
 }
-
-
-
-
-
 // Panos
 
 function asetaPanos(n) {
@@ -62,9 +51,26 @@ function update (){
     document.getElementById("rahat").innerHTML = rahat;
 
     // Lukituksen kuvat
+            if (lock1 == 0) {
+                document.getElementById("lock1").src = "./lock.png"; 
+            } 
+            else {
+                document.getElementById("lock1").src = "./lockv3.png"; 
+            }
+            if (lock2 == 0) {
+                document.getElementById("lock2").src = "./lock.png";
+            }
+            else {
+                document.getElementById("lock2").src = "./lockv3.png";
+            }
+            if (lock3 == 0){
+                document.getElementById("lock3").src = "./lock.png";
+            }
+            else {
+                document.getElementById("lock3").src = "./lockv3.png"; 
+            }
 
-
-}
+        }
    
 
 // Pelaa napin toiminta
@@ -170,7 +176,7 @@ function lukitse(j) {
 
 // Lukituspainikkeen kuvan vaihto
 function vaihdaKuva(elem) {
-    if (elem.dataset.lock == 'false')   { 
+     if (elem.dataset.lock == 'false')   { 
         document.getElementById(elem.id).src = "./IMG/lockv3.png";
         elem.dataset.lock = "true";
     }
@@ -183,7 +189,6 @@ function vaihdaKuva(elem) {
    //voiton tarkistus
    
 function tarkistaVoitto(){
-    
         if (slot1 == 0 && slot2 == 0 && slot3 == 0) {    
             rahat = rahat + 2;
             update();
@@ -194,9 +199,9 @@ function tarkistaVoitto(){
         else if (slot1 == 1 && slot2 == 1 && slot3 == 1) {
             rahat = rahat + 5;
             update();
-           showModal('winModal');
+        showModal('winModal');
 
-           
+        
         }
         else if (slot1 == 2 && slot2 == 2 && slot3 == 2) {
             rahat = rahat + 10;
@@ -211,9 +216,12 @@ function tarkistaVoitto(){
 
         }
         else {
-           update();
-        }
-        
+        update();
+    }
+    
+}
+    
+       
         
 
 }
