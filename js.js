@@ -2,7 +2,7 @@ let lukitus = false;
 
 let lock1 = lock2 = lock3 = 0; 
 
-let images = [ "paaryna.png", "kirsikka.png", "melooni.png"];
+let images = [ "paaryna.png", "kirsikka.png", "melooni.png", "avatar.png"];
 let rahat = 50;
 let panos = 1; 
 
@@ -10,6 +10,7 @@ let panos = 1;
 let slot1 = 0;
 let slot2 = 1; 
 let slot3 = 2;
+let avatar = 3; 
 
 
 //span, joka sulkee modalin 
@@ -17,7 +18,9 @@ var span = document.getElementsByClassName("close")[0];
 
 // kun käyttäjä painaa nappia 
 function showModal(elemId){
-    painettaan  (X) 
+    painetaan  (X)
+}
+
 span.onclick = function() {
     modaali.style.display = "none";
 }
@@ -51,40 +54,56 @@ function update (){
     document.getElementById("rahat").innerHTML = rahat;
 
     // Lukituksen kuvat
-            if (lock1 == 0) {
-                document.getElementById("lock1").src = "./lock.png"; 
-            } 
-            else {
-                document.getElementById("lock1").src = "./lockv3.png"; 
-            }
-            if (lock2 == 0) {
-                document.getElementById("lock2").src = "./lock.png";
-            }
-            else {
-                document.getElementById("lock2").src = "./lockv3.png";
-            }
-            if (lock3 == 0){
-                document.getElementById("lock3").src = "./lock.png";
-            }
-            else {
-                document.getElementById("lock3").src = "./lockv3.png"; 
-            }
+    if (lock1 == 0) {
+        document.getElementById("lock1").src = "./IMG/lock.png"; 
+    } 
+    else {
+        document.getElementById("lock1").src = "./IMG/lockv3.png"; 
+    }
+    if (lock2 == 0) {
+        document.getElementById("lock2").src = "./IMG/lock.png";
+    }
+    else {
+        document.getElementById("lock2").src = "./IMG/lockv3.png";
+    }
+    if (lock3 == 0){
+        document.getElementById("lock3").src = "./IMG/lock.png";
+    }
+    else {
+        document.getElementById("lock3").src = "./IMG/lockv3.png"; 
+    }
 
-        }
-   
 
+   if (lock1 == 1) {
+      lukitus == false; 
+   } 
+}
 // Pelaa napin toiminta
 
 
 function slot(){
+    if (lukitus == false){
     return Math.floor(Math.random()* images.length);
+}
+
+else {
+    lukitus == true;
+}
 }
 function slot(){
-    return Math.floor(Math.random()* images.length);
-}
+    if (lukitus == false){
+        return Math.floor(Math.random()* images.length);
+    }
+        else {
+            lukitus == true;
+            
+        }
+    
+    }
 
 
-function pelaaPainike () {
+
+function pelaaPainike() {
     
     rahat = rahat - panos;
     
@@ -118,11 +137,7 @@ function pelaaPainike () {
         lukitus = true; 
     }
 
-    tarkistaVoitto();
-
-
-
-  
+    tarkistaVoitto(); 
 
 } 
     
@@ -209,19 +224,21 @@ function tarkistaVoitto(){
             showModal('winModal');
 
             }
+            else if (slot1 == 3 && slot2 == 3 && slot3 == 3) {
+                rahat = rahat + 30;
+                update();
+                showModal('winModal')
+            }
 
         else if (rahat <= 0) {
             update();
             showModal('loseModal');   
 
         }
+        
+
         else {
         update();
     }
     
-}
-    
-       
-        
-
 }
