@@ -82,27 +82,16 @@ function update (){
 
 
 function slot(){
-    if (lukitus == false){
+{
     return Math.floor(Math.random()* images.length);
+
 }
+  {
+    return Math.floor(Math.random()* images.length);
+  }
+   
 
-else {
-    lukitus == true;
 }
-}
-function slot(){
-    if (lukitus == false){
-        return Math.floor(Math.random()* images.length);
-    }
-        else {
-            lukitus == true;
-            
-        }
-    
-    }
-
-
-
 function pelaaPainike() {
     
     rahat = rahat - panos;
@@ -122,8 +111,11 @@ function pelaaPainike() {
     if (lock3 == 0) {
         slot3 = slot(); 
     }
+    else {
+        update();
+    }
 
-
+    
     update();
 
     if (lock1 == 1 || lock2 == 1 || lock3 == 1) { 
@@ -134,7 +126,7 @@ function pelaaPainike() {
         update();
     }
     else {
-        lukitus = true; 
+        lukitus =   true; 
     }
 
     tarkistaVoitto(); 
@@ -155,51 +147,46 @@ function lukitse(j) {
         return
     }
 
-    if (j.id == "lock1") {
+    if (j == 1){
         if (lock1 == 0) {
             lock1 = 1;
         } else {
             lock1 = 0;
         }
-        console.log(lock1);
-        vaihdaKuva(j);
     }
-
-    if (j.id == "lock2") {
-        console.log(j.id)
+    
+    if (j == 2){
         if (lock2 == 0) {
             lock2 = 1;
         } else {
             lock2 = 0;
         }
-        console.log(lock2);
-        vaihdaKuva(j);
     }
-
-    if (j.id == "lock3") {
-        console.log(j.id)
+    
+    if (j == 3){
+        
         if (lock3 == 0) {
             lock3 = 1;
         } else {
             lock3 = 0;
         }
-        console.log(lock3);
-        vaihdaKuva(j);
+    
     }
-
+    
+    update();
 }
 
 // Lukituspainikkeen kuvan vaihto
-function vaihdaKuva(elem) {
-     if (elem.dataset.lock == 'false')   { 
-        document.getElementById(elem.id).src = "./IMG/lockv3.png";
-        elem.dataset.lock = "true";
-    }
-    else {
-        document.getElementById(elem.id).src = "./IMG/lock.png"
-        elem.dataset.lock = "false"; 
-    }
-}
+// function vaihdaKuva(elem) {
+//      if (elem.dataset.lock == 'false')   { 
+//         document.getElementById(elem.id).src = "./IMG/lockv3.png";
+//         elem.dataset.lock = "true";
+//     }
+//     else {
+//         document.getElementById(elem.id).src = "./IMG/lock.png"
+//         elem.dataset.lock = "false"; 
+//     }
+// }
 
    //voiton tarkistus
    
