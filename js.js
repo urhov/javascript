@@ -3,6 +3,7 @@ let lukitus = false;
 let lock1 = lock2 = lock3 = 0; 
 
 let images = [ "paaryna.png", "kirsikka.png", "melooni.png", "avatar.png"];
+let kertoimet = [ 2, 5, 10, 30];
 let rahat = 50;
 let panos = 1; 
 
@@ -113,7 +114,7 @@ function pelaaPainike() {
     update();
 
     if (lock1 == 1 || lock2 == 1 || lock3 == 1) { 
-        lukitus == false;
+        lukitus = false;
         lock1 = 0;
         lock2 = 0; 
         lock3 = 0;
@@ -186,42 +187,39 @@ function lukitse(j) {
    //voiton tarkistus
    
 function tarkistaVoitto(){
-        if (slot1 == 0 && slot2 == 0 && slot3 == 0) {    
-            rahat = rahat + 2;
-            update();
-            showModal('winModal');
-            lukitus = false;
-        }
-        else if (slot1 == 1 && slot2 == 1 && slot3 == 1) {
-            rahat = rahat + 5;
-            update();
-            showModal('winModal');
-            lukitus = false;
-
-        
-        }
-        else if (slot1 == 2 && slot2 == 2 && slot3 == 2) {
-            rahat = rahat + 10;
-            update();
-            showModal('winModal');
-            lukitus = false; 
-
-            }
-            else if (slot1 == 3 && slot2 == 3 && slot3 == 3) {
-                rahat = rahat + 30;
-                update();
-                showModal('winModal');
-                lukitus = false; 
-            }
-
-        else if (rahat <= 0) {
-            update();
-            showModal('loseModal');  
-            lukitus = false;
-
-        }
-        else {
+    if (slot1 == 0 && slot2 == 0 && slot3 == 0) {
+       rahat = rahat + panos * kertoimet[0];
         update();
-    }
-    
+        showModal('winModal');
+        lukitus = false; 
+ }     
+else if (slot1 == 1 && slot2 == 1 && slot3 == 1) {
+    rahat = rahat + panos * kertoimet[1];
+    update(); 
+    showModal('winModal');
+    lukitus = false;
 }
+else if (slot1 == 2 && slot2 == 2 && slot3 == 2) {
+    rahat = rahat + panos * kertoimet[2];
+ update(); 
+ showModal('winModal');
+ lukitus = false; 
+}
+   
+  else if (slot1 == 3 && slot2 == 3 && slot3 == 3) {
+    rahat = rahat + panos * kertoimet[3];
+     update();
+     showModal('winModal');
+     lukitus = false; 
+ }
+else if (rahat <= 0) {
+    update();
+    showModal('loseModal');  
+    lukitus = false;
+}
+else {
+update();
+}
+}
+
+    
