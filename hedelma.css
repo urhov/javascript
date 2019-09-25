@@ -83,12 +83,17 @@ body, html {
     background-color: khaki;
    
 }
+.laina {
+    position: absolute;
+    left: 10%;
+}
 
 /*  Modaalin tausta! */
 .modal {
     display: none; 
     position: fixed;
      z-index: 1;
+     padding-top: 100px;
      left: 0;
      top: 0;
      width: 100%;   /*Modaali peittää koko näytön */
@@ -97,16 +102,36 @@ body, html {
      background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4); /* opacity eli läpinäkyvyys */
 }
-/*Modaali laatikko*/
+/*Modaali laatikko (ja kuva)*/
 .modal-content {
     background-color: #999;
-    margin: 15% auto;  /*15% tulee ylhäältä keskelle. */
+    margin: auto;  /*15% tulee ylhäältä keskelle. */
     padding: 20px;
-    border: 1px solid #888;
     width: 80%; /*voii olla pienempi, riippuu ruuudun koosta*/
     font: 24px; 
+    display: block;
     position: relative;
+    max-width: 500px;
+}
+/*modaalin caption*/
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
 
+@keyframes zoom {
+    from {transform:scale(0)}
+    to   {transform:scale(1)}
 }
 /*close nappi*/
 .close {
@@ -123,4 +148,10 @@ body, html {
     color: black;
     text-decoration: none;
     cursor: pointer;
+    /*kuvan koko pienemmällä näytöllä 100%*/
+}
+@media only screen and (max-width: 500px){
+    .modal-content {
+        width: 100%;
+    }
 }

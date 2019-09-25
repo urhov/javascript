@@ -1,11 +1,16 @@
+var kuva1 = document.getElementById("kuva1");
+var voittoKuva = document.getElementById("voittoKuva");
+var hävisitKuva = document.getElementById("hävisitKuva"); 
+var captionTeksti = document.getElementById("caption");
+var laina = document.getElementById("haeLainaa");
 let lukitus = false;
-
 let lock1 = lock2 = lock3 = 0; 
 
 let images = [ "paaryna.png", "kirsikka.png", "melooni.png", "avatar.png"];
 let kertoimet = [ 2, 5, 10, 30];
 let rahat = 50;
 let panos = 1; 
+let laina = 1; 
 
 let slot1 = 0;
 let slot2 = 1; 
@@ -18,9 +23,11 @@ var span = document.getElementsByClassName("close")[0];
 // kun käyttäjä painaa nappia 
 function showModal(elemId){
     document.getElementById(elemId).style.display = "block";
+    captionTeksti.innerHTML = this.alt;
 }
 function loseModal(){
-document.getElementById(elemId).style.display = "block; "
+    document.getElementById(elemId).style.display = "block"; 
+    captionTeksti.innerHTML = this.alt;
 }
 
 span.onclick = function() {
@@ -41,6 +48,7 @@ function asetaPanos(n) {
     panos = n;
     update();   
 }   
+
 
 function update (){
 
@@ -129,7 +137,13 @@ function pelaaPainike() {
 } 
     
 
-   
+function haeLainaa() {
+    if (laina = 1) {
+        rahat = rahat + 50;
+        update();
+    } 
+    
+}
 
 /************************************ *
 Lukituksen toiminta

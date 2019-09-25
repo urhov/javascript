@@ -14,20 +14,21 @@
         <!--Modaali-->       
         <div id="winModal" class="modal">
             <!--Modaalin asiat-->
-            <div class="modal-content">
-            <p>voitto</p>
+            <div class="modal-content" id="kuva1";>
+            <img id="voittoKuva" src="IMG/voittokuva.png" alt="voittokuva png" style="width:100%;max-width:300px ">
                 <span class="close">&times;</span>
             </div>  
         </div>
         <!--Häviö Modaali-->       
         <div id="loseModal" class="modal">
+
             <!--Häviö Modaalin asiat-->
             <div class="modal-content">
-                <p>Hävisit</p>
+                    <img id="HävisitKuva" src="IMG/Hävisit.png" alt="Hävisit png" style="width:100%;max-width:300px">
                 <span class="loseclose">&times;</span>
+                <div id="caption"></div>
             </div>
-        </div> 
-
+        </div>
     <p class="center">hedelmäpeli</p>   
     <div class ="center wheat info">
         <p>Rahat: <span id="rahat"></span>€</p>  
@@ -51,6 +52,7 @@
                 <img src="IMG/melooni.png" id="k3" alt= "melooni png"  style="width: 150px; height: 100px;">
             </span>
         </div>
+        <button onclick="haeLainaa()" class="laina">lainaa rahaa</button>
         <div class="locks">
             <span class="lukko1">
                  <img id="lock1" data-lock="false" onclick="lukitse(1)" src="IMG/lock.png" width="150px">
